@@ -1,5 +1,17 @@
 import React from 'react';
 import './App.css';
+import PropTypes from 'prop-types';
+
+class ItemModel {
+  constructor(brand, title, description, descriptionFull, price, currency) {
+    this.brand = brand;
+    this.title = title;
+    this.description = description;
+    this.descriptionFull = descriptionFull;
+    this.price = price;
+    this.currency = currency;
+  }
+}
 
 function App(props) {
   return (
@@ -31,6 +43,10 @@ function ShopItemFunc(props) {
        </div>
      </div>
    );
+}
+
+ShopItemFunc.propTypes = {
+  item: PropTypes.instanceOf(ItemModel).isRequired
 }
 
 export default App;
